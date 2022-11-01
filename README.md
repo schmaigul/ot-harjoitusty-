@@ -2,6 +2,10 @@
 
 **Helsingin Yliopiston** kurssi *ohjelmistotekniikka* (5 ECTS)
 
-## Laskarit
+## Tehtävät
 
-[Viikko 1](/laskarit/viikko1/)
+##
+
+[gitlog.txt](/laskarit/viikko1/gitlog.txt)
+
+[komentorivi.txt](/laskarit/viikko1/komentorivi.txt)
