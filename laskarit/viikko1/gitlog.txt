@@ -1,0 +1,114 @@
+❯ gi log --stat | cat
+commit 0d435dccd7fb931a9be217082d3450cef7eeaf66
+Author: Schmaigul <miksuhok@gmail.com>
+Date:   Tue Nov 1 13:33:23 2022 +0200
+
+    renamed file2 to file22 and removed file1
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 114a085da734fd6ab536cff2768c9975d9126081
+Author: Schmaigul <miksuhok@gmail.com>
+Date:   Tue Nov 1 13:25:55 2022 +0200
+
+    uusi hakemisto
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit ee20651339d4d32bbdf70ccf92769e451f35dc1b
+Author: Schmaigul <miksuhok@gmail.com>
+Date:   Tue Nov 1 13:21:08 2022 +0200
+
+    changes
+
+ eka.txt    |  5 +++--
+ kolmas.txt | 15 ++++++++++++++-
+ 2 files changed, 17 insertions(+), 3 deletions(-)
+
+commit c666944a53b0abca9c119cec466b7f42601e44d5
+Author: Schmaigul <miksuhok@gmail.com>
+Date:   Tue Nov 1 11:12:22 2022 +0200
+
+    renamed tiedosto.txt to eka.txt
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 252b385a6222b071c9fa74473930f58f4095b16f
+Author: Schmaigul <miksuhok@gmail.com>
+Date:   Tue Nov 1 11:11:40 2022 +0200
+
+    tiedosto.txt poistettu
+
+ toinen.txt | 2 --
+ 1 file changed, 2 deletions(-)
+
+commit eb84f993629879fd13582f8fe8fcd541143f1893
+Author: Schmaigul <miksuhok@gmail.com>
+Date:   Tue Nov 1 11:10:27 2022 +0200
+
+    tiedosto.txt muutos
+
+ tiedosto.txt | 3 ---
+ 1 file changed, 3 deletions(-)
+
+commit 2240d0ed8c3229bee2b648185244bd5ad56ccc80
+Author: Schmaigul <miksuhok@gmail.com>
+Date:   Tue Nov 1 11:09:32 2022 +0200
+
+    tiedosto.txt päivitys
+
+ tiedosto.txt | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+commit c6cd216492ff47628936e86cf290a369ee27d323
+Author: Schmaigul <miksuhok@gmail.com>
+Date:   Tue Nov 1 10:56:22 2022 +0200
+
+    uusi hakemisto
+
+ stuff/neljas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 5622825b699bd962e22b2574e0a5b01b460ee2d4
+Author: Schmaigul <miksuhok@gmail.com>
+Date:   Tue Nov 1 10:55:05 2022 +0200
+
+    muutoksia
+
+ kolmas.txt | 1 +
+ toinen.txt | 2 ++
+ 2 files changed, 3 insertions(+)
+
+commit 321936fdd076c344d08d46fada95811ae4d5b30f
+Author: Schmaigul <miksuhok@gmail.com>
+Date:   Tue Nov 1 10:53:50 2022 +0200
+
+    lisätty kolmas.txt
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit f1a909dff8860ed0a2fcb6ead9689de021b8c977
+Author: Schmaigul <miksuhok@gmail.com>
+Date:   Tue Nov 1 10:51:40 2022 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 060bf647ba15f2673960f3351e55799853248a86
+Author: Schmaigul <miksuhok@gmail.com>
+Date:   Tue Nov 1 10:49:48 2022 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)t
