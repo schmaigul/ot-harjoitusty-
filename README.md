@@ -1,6 +1,6 @@
 # Repo kurssille Ohjelmistotekniikka.
 
-**Helsingin Yliopiston** kurssi *ohjelmistotekniikka* (5 ECTS)
+**Helsingin Yliopiston** kurssi ohjelmistotekniikka (5 ECTS)
 
 ## Tehtävät
 
