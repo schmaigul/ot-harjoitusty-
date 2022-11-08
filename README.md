@@ -4,14 +4,18 @@
 
 ## Tehtävät
 
-## Viikko 1
+### Viikko 1
 
 [gitlog.txt](/laskarit/viikko1/gitlog.txt)
 
 [komentorivi.txt](/laskarit/viikko1/komentorivi.txt)
 
+### Viikko 2
+
+[kattavuusraportti.png](/laskarit/viikko2/kattavuusraportti.png)
+
 ## Dokumentaatio
 
-[vaatimuusmäärittely.md](/dokumentaatio/vaatimusm%C3%A4%C3%A4rittely.md)
+[Vaatimuusmäärittely.md](/dokumentaatio/vaatimusm%C3%A4%C3%A4rittely.md)
 
-[työaikakirjanpito.md](/dokumentaatio/ty%C3%B6aikakirjanpito.md)
+[Työaikakirjanpito.md](/dokumentaatio/ty%C3%B6aikakirjanpito.md)
