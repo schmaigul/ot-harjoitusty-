@@ -14,6 +14,10 @@
 
 [kattavuusraportti.png](/laskarit/viikko2/kattavuusraportti.png)
 
+### Viikko 3
+
+[Tehtävät](/laskarit/viikko3/)
+
 ## Dokumentaatio
 
 [Vaatimuusmäärittely.md](/dokumentaatio/vaatimusm%C3%A4%C3%A4rittely.md)
