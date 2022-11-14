@@ -18,6 +18,14 @@
 
 [Tehtävät](/laskarit/viikko3/)
 
+[Tehtävä 1](/laskarit/viikko3/tehtava1.png)
+
+[Tehtävä 2](/laskarit/viikko3/tehtava2.drawio.png)
+
+[Tehtävä 3](/laskarit/viikko3/tehtava3.png)
+
+[Tehtävä 4](/laskarit/viikko3/tahtava4.png)
+
 ## Dokumentaatio
 
 [Vaatimuusmäärittely.md](/dokumentaatio/vaatimusm%C3%A4%C3%A4rittely.md)
