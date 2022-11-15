@@ -1,33 +1,45 @@
-# Repo kurssille Ohjelmistotekniikka.
-
 **Helsingin Yliopiston** kurssi ohjelmistotekniikka (5 ECTS)
 
-## Tehtävät
+# TypingTest
 
-### Viikko 1
-
-[gitlog.txt](/laskarit/viikko1/gitlog.txt)
-
-[komentorivi.txt](/laskarit/viikko1/komentorivi.txt)
-
-### Viikko 2
-
-[kattavuusraportti.png](/laskarit/viikko2/kattavuusraportti.png)
-
-### Viikko 3
-
-[Tehtävät](/laskarit/viikko3/)
-
-[Tehtävä 1](/laskarit/viikko3/tehtava1.png)
-
-[Tehtävä 2](/laskarit/viikko3/tehtava2.drawio.png)
-
-[Tehtävä 3](/laskarit/viikko3/tehtava3.png)
-
-[Tehtävä 4](/laskarit/viikko3/tahtava4.png)
+Sovelluksella voit testata kuinka nopea olet kirjoittamaan tietokoneen näppäimistöllä, antaen reaaliajassa tilastoja etenemisestäsi.
 
 ## Dokumentaatio
 
-[Vaatimuusmäärittely.md](/dokumentaatio/vaatimusm%C3%A4%C3%A4rittely.md)
+[Vaatimuusmäärittely](/dokumentaatio/vaatimusm%C3%A4%C3%A4rittely.md)
 
-[Työaikakirjanpito.md](/dokumentaatio/ty%C3%B6aikakirjanpito.md)
+[Työaikakirjanpito](/dokumentaatio/ty%C3%B6aikakirjanpito.md)
+
+[Changelog](/dokumentaatio/changelog.md)
+
+## Asennus
+
+1. Asenna riippuvuudet komennolla:
+
+``poetry install``
+
+2. Käynnistä sovellus komennolla
+
+``poetry run invoke start``
+
+## Komentorivitoiminnot
+
+# Ohjelman suorittaminen
+
+Ohjelman pystyy suorittamaan komennolla:
+
+``poetry run invoke start``
+
+# Testaus
+
+Testit suoritetaan komennolla
+
+``poetry run invoke test``
+
+# Testikattavuus
+
+Testikattavuus generoidaan komennolla
+
+``poetry run invoke coverage-report``
+
+
