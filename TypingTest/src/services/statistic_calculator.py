@@ -11,24 +11,24 @@ class StatisticService:
     def calculate_elapsed_time(self):
         current_time = time.time()
         return current_time-self._start_time
-    
-    def calculate_words_per_minute(self, input):
-        length = len(input.split())
-        if (length == 1):
+
+    def calculate_words_per_minute(self, usr_input):
+        length = len(usr_input.split())
+        if length == 1:
             return 0
         time_taken_in_seconds = self.calculate_elapsed_time()
         wpm = length/(time_taken_in_seconds)*60
         return wpm
 
-    def calculate_accuracy(self, sentence_label, input):
-        input_length = len(input)
+    def calculate_accuracy(self, sentence_label, usr_input):
+        input_length = len(usr_input)
         correct_so_far = sentence_label[:input_length]
-        
-        acc = len(set(input.split()) & set(correct_so_far.split()))
-        
-        if len(input.split()) == 0:
+
+        acc = len(set(usr_input.split()) & set(correct_so_far.split()))
+
+        if len(usr_input.split()) == 0:
             return 0
 
-        acc = acc/len(input.split())
+        acc = acc/len(usr_input.split())
 
         return acc*100

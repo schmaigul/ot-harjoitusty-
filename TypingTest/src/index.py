@@ -1,10 +1,9 @@
-from tkinter import Tk, ttk, constants
-from UI.ui import UI
+from tkinter import Tk
+from ui.ui import ui
 
 window = Tk()
 window.title("TypingTest")
 window.geometry("500x400")
-ui = UI(window)
-ui._show_typing_test_view()
+ui = ui(window)
 
 window.mainloop()

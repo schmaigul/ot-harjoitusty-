@@ -1,10 +1,12 @@
-from UI.typing_test_view import TypingTestView
-from UI.typing_test_finish_view import TypingTestFinishView
+from ui.typing_test_view import TypingTestView
+from ui.typing_test_finish_view import TypingTestFinishView
 
-class UI:
+class ui:
     def __init__(self, root):
         self._root = root
         self._current_view = None
+
+        self._show_typing_test_view()
 
     def _hide_current_view(self):
         if self._current_view:
