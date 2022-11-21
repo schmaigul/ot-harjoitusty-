@@ -15,15 +15,14 @@ class Statistic:
     def get_accuracy(self):
         return self.accuracy
 
-    def time_taken_string(self):
-        return str(f'Time taken: {self.time_taken}')
+    def time_taken_string(self, event = None):
+        # pylint: disable=unused-argument
+        return f'Time taken: {self.time_taken:.2f}s'
 
-    def wpm_string(self):
-        return str(f'WPM: {self.wpm}')
+    def wpm_string(self, event = None):
+        # pylint: disable=unused-argument
+        return f'WPM: {self.wpm:.2f}'
 
-    def accuracy_string(self):
-        return str(f'Accuracy: {self.accuracy}')
-
-    
-
-    
+    def accuracy_string(self, event = None):
+        # pylint: disable=unused-argument
+        return f'Accuracy: {int(self.accuracy)}%'

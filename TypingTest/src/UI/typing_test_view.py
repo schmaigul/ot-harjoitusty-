@@ -1,5 +1,6 @@
 from tkinter import ttk, constants, StringVar, Text, WORD, INSERT
 
+from entities.statistic import Statistic
 from services.sentence_service import SentenceService
 from services.statistic_calculator import StatisticService
 
@@ -31,6 +32,7 @@ class TypingTestView:
 
     def _initialize(self):
         
+        self._root.geometry("500x400")
         self._frame = ttk.Frame(master = self._root)
         self._frame.option_add("*Label.Font", "consolas 30")
         self._frame.option_add("*Button.Font", "consolas 30")
@@ -88,26 +90,39 @@ class TypingTestView:
         if not self._running:
             self._running = True
             self._statistics_service.time_start()
-        completed = self._sentence_service.evaluate(self._sentence_label, self._sentence_form)
 
-        self.update_statistics()
+        completed, color = self._sentence_service.evaluate(self._sentence_label.cget('text'), self._sentence_form.get())
+        self._sentence_form.config(foreground = color)
+
+        if not completed:
+            self.update_statistics()
         
-        if completed:
-            self._running = False
         #If the text is finished, change view to statistics
+        if completed:
+            self._frame.after(1000, self.save_and_complete)
     
-    def update_statistics(self, time_taken = 0, wpm = 0, accuracy = 0):
+    def update_statistics(self):
 
         input = self._sentence_form.get()
         sentence_label = self._sentence_label.cget("text")
 
+        self._statistics_service.calculate_statistics(sentence_label, input)
+
+        self._wpm.config(text = self._statistics_service.wpm_string())
+        self._time_taken.config(text = self._statistics_service.time_taken_string())
+        self._accuracy.config(text = self._statistics_service.accuracy_string())
+
+    def save_and_complete(self):
+
+        input = self._sentence_form.get()
+        sentence_label = self._sentence_label.cget("text")
+        
         time_taken = self._statistics_service.calculate_elapsed_time()
         wpm = self._statistics_service.calculate_words_per_minute(input)
         accuracy = self._statistics_service.calculate_accuracy(sentence_label, input)
 
-        self._wpm.config(text = f'WPM: {"{:.2f}".format(wpm)}')
-        self._time_taken.config(text = f'Time taken: {"{:.2f}".format(time_taken)}s')
-        self._accuracy.config(text = f'Accuracy: {int(accuracy)}%')
-
+        final_statistic = Statistic(time_taken, wpm, accuracy)
+        
+        self._handle_show_typing_test_finish_view(final_statistic)
 
 

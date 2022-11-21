@@ -12,6 +12,8 @@ Sovelluksella voit testata kuinka nopea olet kirjoittamaan tietokoneen näppäim
 
 [Changelog](/dokumentaatio/changelog.md)
 
+[Arkkitehtuurikuvaus](/dokumentaatio/arkkitehtuuri.md)
+
 ## Asennus
 
 1. Asenna riippuvuudet komennolla:

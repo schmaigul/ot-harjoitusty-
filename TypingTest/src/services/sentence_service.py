@@ -1,10 +1,8 @@
 from essential_generators import DocumentGenerator
-from services.statistic_calculator import StatisticService
 
 class SentenceService:
     def __init__(self):
         self._generator = DocumentGenerator()
-        self._statistic_calc = StatisticService()
 
     def generate_sentence(self):
 
@@ -18,19 +16,15 @@ class SentenceService:
 
     def evaluate(self, sentence_label, usr_input):
         completed = False
-        input_text = usr_input.get()
-        ex_sentence = sentence_label.cget('text')
+        color = None
 
-        if not ex_sentence.startswith(input_text):
-            usr_input.config(foreground='red')
-
+        if not sentence_label.startswith(usr_input):
+            color = 'red'
         else:
-            usr_input.config(foreground="black")
-
-        if ((len(input_text.split()) == len(ex_sentence.split()))
-                and (input_text[-1] == ex_sentence[-1])):
-
-            usr_input.config(foreground = "green")
+            color = 'black'
+        if ((len(usr_input.split()) == len(sentence_label.split()))
+                and (usr_input[-1] == sentence_label[-1])):
+            color = 'green'
             completed = True
 
-        return completed
+        return completed, color
