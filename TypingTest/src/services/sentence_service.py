@@ -22,7 +22,7 @@ class SentenceService:
         ex_sentence = sentence_label.cget('text')
 
         if not ex_sentence.startswith(input_text):
-            input_text.config(foreground='red')
+            usr_input.config(foreground='red')
 
         else:
             usr_input.config(foreground="black")
@@ -30,7 +30,7 @@ class SentenceService:
         if ((len(input_text.split()) == len(ex_sentence.split()))
                 and (input_text[-1] == ex_sentence[-1])):
 
-            input_text.config(foreground = "green")
+            usr_input.config(foreground = "green")
             completed = True
 
         return completed
