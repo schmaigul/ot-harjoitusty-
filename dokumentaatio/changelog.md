@@ -29,3 +29,19 @@
 - Testejä lauseiden generointiin ja statistiikkojen laskemiseen
 
 - Koodipohjan parantelua
+
+## Viikko 5
+
+- Käyttäjä voi luoda luoda uuden käyttäjän joka tallennetaan tietokantaan
+
+- Kirjautumisikkuna ilmoittaa väärästä salasanasta tai käyttäjänimestä
+
+- Uuden käyttäjän luomisessa sovellus ilmoittaa jos käyttäjänimi on jo käytössä
+
+- Tietokanta statistiikkoja varten, ja logiikka statistiikkojen päivittämiseen
+
+- TypingTestiä paranneltu
+
+- Testit kirjautumiselle ja tietokannan käsittelemiselle
+
+- Lisää testejä kaikkille luokille
