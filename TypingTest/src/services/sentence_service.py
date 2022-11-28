@@ -23,7 +23,7 @@ class SentenceService:
         else:
             color = 'black'
         if ((len(usr_input.split()) == len(sentence_label.split()))
-                and (usr_input[-1] == sentence_label[-1])):
+                and (usr_input.split()[-1] == sentence_label.split()[-1])):
             color = 'green'
             completed = True
 

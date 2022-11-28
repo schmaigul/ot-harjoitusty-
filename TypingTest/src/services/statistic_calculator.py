@@ -1,7 +1,7 @@
 import time
 from entities.statistic import Statistic
 
-class StatisticService(Statistic):
+class StatisticCalculator(Statistic):
     def __init__(self):
         super().__init__()
         self._typos = 0
@@ -9,9 +9,9 @@ class StatisticService(Statistic):
 
     def calculate_statistics(self, sentence_label, usr_input):
 
+        self.accuracy = self.calculate_accuracy(sentence_label, usr_input)
         self.time_taken = self.calculate_elapsed_time()
         self.wpm = self.calculate_words_per_minute(usr_input)
-        self.accuracy = self.calculate_accuracy(sentence_label, usr_input)
 
     def time_start(self):
         self._start_time = time.time()

@@ -2,7 +2,9 @@ from tkinter import ttk, constants, StringVar, Text, WORD, INSERT
 
 from entities.statistic import Statistic
 from services.sentence_service import SentenceService
-from services.statistic_calculator import StatisticService
+from services.statistic_calculator import StatisticCalculator
+from services.statistic_service import statistic_service
+from services.user_service import user_service
 
 class TypingTestView:
 
@@ -11,7 +13,7 @@ class TypingTestView:
         self._handle_show_typing_test_finish_view = handle_typing_test_finish_view
 
         self._sentence_service = None
-        self._statistics_service = None 
+        self._statistic_calculator = None 
 
         self._frame = None
         self._running = False
@@ -38,7 +40,7 @@ class TypingTestView:
         self._frame.option_add("*Button.Font", "consolas 30")
 
         self._sentence_service = SentenceService()
-        self._statistics_service = StatisticService()
+        self._statistic_calculator = StatisticCalculator()
 
         self._initialize_title()
         self._initialize_test_sentence()
@@ -77,52 +79,56 @@ class TypingTestView:
         typingform.focus()
 
     def _initialize_statistics(self):
-        
+
+        self._accuracy = ttk.Label(master = self._frame, text = f'Accuracy: 100%', font =('consolas', 12))
         self._wpm = ttk.Label(master = self._frame, text = f'WPM: 0', font=('consolas', 12))
         self._time_taken = ttk.Label(master =self._frame, text = f'Time taken: 0s', font=('consolas', 12))
-        self._accuracy = ttk.Label(master = self._frame, text = f'Accuracy: 100%', font =('consolas', 12))
 
+        self._accuracy.grid(column=1, columnspan=1, padx = 5, pady = 5)
         self._wpm.grid(column=1, columnspan=1, padx = 5, pady = 5)
         self._time_taken.grid(column=1, columnspan=1, padx = 5, pady = 5)
-        self._accuracy.grid(column=1, columnspan=1, padx = 5, pady = 5)
 
     def evaluate_input(self, event):
+        sentence_label = self._sentence_label.cget('text')
+        usr_input = self._sentence_form.get()
+
         if not self._running:
             self._running = True
-            self._statistics_service.time_start()
+            self._statistic_calculator.time_start()
 
-        completed, color = self._sentence_service.evaluate(self._sentence_label.cget('text'), self._sentence_form.get())
+        completed, color = self._sentence_service.evaluate(sentence_label, usr_input)
         self._sentence_form.config(foreground = color)
 
-        if not completed:
-            self.update_statistics()
-        
-        #If the text is finished, change view to statistics
+        self.update_statistics()
+
         if completed:
-            self._frame.after(1000, self.save_and_complete)
+            self.save_and_complete()
     
     def update_statistics(self):
-
-        input = self._sentence_form.get()
+        
+        #Retrieve the current input and sentence
+        usr_input = self._sentence_form.get()
         sentence_label = self._sentence_label.cget("text")
 
-        self._statistics_service.calculate_statistics(sentence_label, input)
+        #Update current statistics to statistic service
+        self._statistic_calculator.calculate_statistics(sentence_label, usr_input)
 
-        self._wpm.config(text = self._statistics_service.wpm_string())
-        self._time_taken.config(text = self._statistics_service.time_taken_string())
-        self._accuracy.config(text = self._statistics_service.accuracy_string())
+        #Set statistic labels as corresponding statistic attributes
+        self._accuracy.config(text = self._statistic_calculator.accuracy_string())
+        self._wpm.config(text = self._statistic_calculator.wpm_string())
+        self._time_taken.config(text = self._statistic_calculator.time_taken_string())
 
     def save_and_complete(self):
-
-        input = self._sentence_form.get()
-        sentence_label = self._sentence_label.cget("text")
         
-        time_taken = self._statistics_service.calculate_elapsed_time()
-        wpm = self._statistics_service.calculate_words_per_minute(input)
-        accuracy = self._statistics_service.calculate_accuracy(sentence_label, input)
+        #Retrieve current statistics to local variables
+        accuracy = self._statistic_calculator.accuracy
+        wpm = self._statistic_calculator.wpm
+        time_taken = self._statistic_calculator.time_taken
+        #make a final statistic, set user as none as it is not needed now
+        round_statistic = Statistic(username = user_service.get_current_user(), accuracy = accuracy, wpm = wpm, time_taken = time_taken, total = 1)
+        statistic_service.set_round_statistic(round_statistic)
 
-        final_statistic = Statistic(time_taken, wpm, accuracy)
-        
-        self._handle_show_typing_test_finish_view(final_statistic)
+        self._frame.after(1000, self._handle_show_typing_test_finish_view)
+
 
 

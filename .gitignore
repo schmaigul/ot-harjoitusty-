@@ -1,6 +1,11 @@
+.vscode
 .pytest_cache
 __pycache__
 .coverage
 htmlcov
 sandbox.py
 testsrc/
+
+# data files
+TypingTest/data/users.sqlite
+TypingTest/data/statistics.sqlite
