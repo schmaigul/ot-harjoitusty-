@@ -30,25 +30,25 @@ Sovelluksella voit testata kuinka nopea olet kirjoittamaan tietokoneen näppäim
 
 ## Komentorivitoiminnot
 
-# Ohjelman suorittaminen
+### Ohjelman suorittaminen
 
 Ohjelman pystyy suorittamaan komennolla:
 
 ``poetry run invoke start``
 
-# Testaus
+### Testaus
 
 Testit suoritetaan komennolla
 
 ``poetry run invoke test``
 
-# Testikattavuus
+### Testikattavuus
 
 Testikattavuus generoidaan komennolla
 
 ``poetry run invoke coverage-report``
 
-# Pylint
+### Pylint
 
 Tiedoston [.pylintrc](TypingTest/.pylintrc) määrittelemät tarkistukset voi suorittaa komennolla:
 
