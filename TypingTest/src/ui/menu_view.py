@@ -22,7 +22,7 @@ class MenuView:
 
     def _initialize(self):
 
-        self._root.geometry("250x100")
+        self._root.geometry("280x110")
         self._frame = ttk.Frame(master = self._root)
         
         self._initialize_header()

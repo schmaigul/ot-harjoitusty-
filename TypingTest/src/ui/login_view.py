@@ -27,7 +27,7 @@ class LoginView:
 
     def _initialize(self): 
 
-        self._root.geometry("250x120")
+        self._root.geometry("270x120")
         self._frame = ttk.Frame(master = self._root)
 
         self._initialize_error_variable()
