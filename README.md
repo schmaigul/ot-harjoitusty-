@@ -48,4 +48,10 @@ Testikattavuus generoidaan komennolla
 
 ``poetry run invoke coverage-report``
 
+# Pylint
+
+Tiedoston [.pylintrc](TypingTest/pylint.rc) määrittelemät tarkistukset voi suorittaa komennolla:
+
+``poetry run invoke lint``
+
 
