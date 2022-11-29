@@ -20,7 +20,11 @@ Sovelluksella voit testata kuinka nopea olet kirjoittamaan tietokoneen näppäim
 
 ``poetry install``
 
-2. Käynnistä sovellus komennolla
+2. Alusta sovellus komennolla:
+
+``poetry run invoke build``
+
+3. Käynnistä sovellus komennolla
 
 ``poetry run invoke start``
 
