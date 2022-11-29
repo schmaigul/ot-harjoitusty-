@@ -50,7 +50,7 @@ Testikattavuus generoidaan komennolla
 
 # Pylint
 
-Tiedoston [.pylintrc](TypingTest/pylint.rc) määrittelemät tarkistukset voi suorittaa komennolla:
+Tiedoston [.pylintrc](TypingTest/.pylintrc) määrittelemät tarkistukset voi suorittaa komennolla:
 
 ``poetry run invoke lint``
 
