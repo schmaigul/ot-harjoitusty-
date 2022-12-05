@@ -31,7 +31,7 @@ class StatisticService:
             self.statistic_repository.insert_user_statistics(self.round_statistic)
             return self.round_statistic
 
-        new_statistic = self.calculate_total_statistic(old_statistics)
+        new_statistic = self.calculate_new_statistic(old_statistics)
         self.statistic_repository.update_user_statistics(new_statistic)
 
         return new_statistic
@@ -39,7 +39,7 @@ class StatisticService:
     def delete_all_statistics(self):
         self.statistic_repository.delete_all_statistics()
 
-    def calculate_total_statistic(self, old_statistics):
+    def calculate_new_statistic(self, old_statistics):
 
         old_total = old_statistics.total
 

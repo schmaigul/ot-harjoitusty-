@@ -1,18 +1,3 @@
-## Sovelluslogiikka
-
-![sovelluslogiikka](/dokumentaatio/kuvat/sovelluslogiikka.png)
-
-## Pakkauskaavio
-
-![pakkauskaavio](/dokumentaatio/kuvat/pakkauskaavio.png)
-
-## Päätoiminnallisuudet
-
-## Typing Testin kulku
-
-Käyttäjän kirjauduttua sisään hän voi aloittaa typing testin, eli kirjoitusharjoituksen. Kirjoitusharjoituksen kulkua alusta loppuun demonstroidaan seuraavalla kaaviolla:
-
-```mermaid
 sequenceDiagram
     actor User
     participant UI
@@ -22,6 +7,7 @@ sequenceDiagram
     participant StatisticService
     participant StatisticService
     participant StatisticRepository
+
     User->>UI: click: "Start a typing test" button
     UI->>SentenceService: generate_sentence()
     SentenceService-->>UI: test_sentence
@@ -32,6 +18,7 @@ sequenceDiagram
     note over UI: User finishes the test
     UI->>UserService: get_current_user()
     UserService-->>UI: user
+
     UI->>StatisticService: save_round_statistic(statistic)
     UI->>StatisticService: update_user_total_statistic() 
     StatisticService->>UserService: get_current_user_statistic()
@@ -40,9 +27,8 @@ sequenceDiagram
     StatisticRepository-->>StatisticService: old_statistic
     StatisticService->>StatisticService: calculate_new_statistic(old_statistic, round_statistic)
     StatisticService->>StatisticRepository: update_user_statistics(new_statistic)
+
+
     UI->>UI: typing_test_finish_view()
     UI->>StatisticService: get_round_statistic()
     StatisticService-->>UI: round_statistic
-```
-
-Tapahtumakäsittelijä kutsuu `SentenceService`:n luomaan uuden harjoituslauseen, minkä käyttäjän pitää kirjoittaa. Harjoitus alkaa, kun käyttäjä aloittaa kirjoittamisen. Harjoituksen aikana tapahtumakäsittelijä päivittää käyttäjän tilastoja reaaliajassa kutsuen `StatisticCalculator`-luokkaa. Harjoituksen loppuessa tapahtumakäsittelijä kutsuu `UserService`:n palauttamaan käyttäjänimen, jonka avulla luodaan uusi `Statistic`-olio. Tämä olio tallennetaan sovelluslogiikkaan seuraavaa näkymää varten `save_round_statistic()`-metodilla. Sitten tapahtumakäsittelijä kutsuu `StatisticService`:n päivittämään käyttäjän kokonaistilastot tietokannassa. Sovelluslogiikka ensin etsii käyttäjän tilastot `StatisticRepository`:n kautta, laskee uudet tilastot, ja tallentaa ne samaan sijaintiin. Tämän jälkeen käyttäjälle aukeaa aiemmin tallennettu tiivistelmä viime harjoituksesta kutsumalla `get_round_statistic()`-metodia.

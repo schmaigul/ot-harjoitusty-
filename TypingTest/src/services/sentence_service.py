@@ -1,4 +1,5 @@
 import re
+import unicodedata
 
 from essential_generators import DocumentGenerator
 
@@ -10,6 +11,7 @@ class SentenceService:
         text = re.sub(r'--', ' ', text)
         text = re.sub(r'[\[].*?[\]]', '', text)
         text = re.sub(r'(\b|\s+\-?|^\-?)(\d+|\d*\.\d+)\b','', text)
+        text.replace('\n', '')
         text = ' '.join(text.split())
         return text
 
@@ -22,7 +24,7 @@ class SentenceService:
             sentence += self._generator.sentence()
             sentence = self.text_cleaner(sentence)
 
-        return sentence
+        return unicodedata.normalize("NFD", sentence)
 
     def evaluate(self, sentence_label, usr_input):
         completed = False
