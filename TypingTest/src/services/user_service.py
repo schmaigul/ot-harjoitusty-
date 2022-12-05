@@ -13,6 +13,9 @@ class UserExistError(Exception):
 class IncorrectPasswordError(Exception):
     pass
 
+class EmptyPasswordError(Exception):
+    pass
+
 class UserService:
     def __init__(self, user_repository = default_user_repository):
 
@@ -41,6 +44,8 @@ class UserService:
 
         if existing_user:
             raise UserExistError("This username is taken")
+        if len(password) == 0:
+            raise EmptyPasswordError("Password cannot be empty")
 
         user = self.user_repository.create_user(User(username, password))
 
@@ -50,6 +55,9 @@ class UserService:
         return self.user_repository.find_all_users()
 
     def get_current_user(self):
-        return self.user.username
+        return self.user
+
+    def delete_all_users(self):
+        self.user_repository.delete_all_users()
 
 user_service = UserService()

@@ -10,7 +10,7 @@ class TestSentence(unittest.TestCase):
         sentence = self.sentenceservice.generate_sentence()
         length = len(sentence.split())
 
-        self.assertEqual(True, (length > 10))
+        self.assertEqual(True, (length >= 10))
 
     def test_sentence_evaluate_wrong(self):
         
@@ -35,6 +35,7 @@ class TestSentence(unittest.TestCase):
         completed, color = self.sentenceservice.evaluate(example_sentence, sentence)
         self.assertEqual('green', color)
         self.assertEqual(True, completed)
+
     
         
 

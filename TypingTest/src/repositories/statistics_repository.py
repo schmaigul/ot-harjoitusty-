@@ -6,7 +6,9 @@ def get_statistic_by_row(row):
                     row['accuracy'],
                     row['wpm'],
                     row['time_taken'],
-                    row['total']) if row else None
+                    row['total'],
+                    row['max_wpm'],
+                    row['min_wpm']) if row else None
 
 class StatisticsRepository:
     def __init__(self, connection):
@@ -37,15 +39,17 @@ class StatisticsRepository:
         cursor = self.connection.cursor()
 
         cursor.execute('''INSERT INTO statistics
-                    (username, accuracy, wpm, time_taken, total)
+                    (username, accuracy, wpm, time_taken, total, max_wpm, min_wpm)
                     VALUES
-                    (?, ? ,?, ?, ?);
+                    (?, ? ,?, ?, ?, ?, ?);
                     ''',
                     (statistic.username,
                     statistic.accuracy,
                     statistic.wpm,
                     statistic.time_taken,
-                    statistic.total,)
+                    statistic.total,
+                    statistic.max_wpm,
+                    statistic.min_wpm,)
                     )
 
         self.connection.commit()
@@ -54,12 +58,14 @@ class StatisticsRepository:
         cursor = self.connection.cursor()
 
         cursor.execute('''UPDATE statistics
-                    SET accuracy = ?, wpm = ?, time_taken = ?, total = ? WHERE username = ?;
+                    SET accuracy = ?, wpm = ?, time_taken = ?, total = ?, max_wpm = ?, min_wpm = ? WHERE username = ?;
                     ''',
                     (statistic.accuracy,
                     statistic.wpm,
                     statistic.time_taken,
                     statistic.total,
+                    statistic.max_wpm,
+                    statistic.min_wpm,
                     statistic.username,)
                     )
 
@@ -73,22 +79,26 @@ class StatisticsRepository:
 
         if current_stats is None:
             cursor.execute('''INSERT INTO statistics
-                        (username, accuracy, wpm, time_taken, total) 
-                        VALUES (?, ? ,?, ?, ?);''',
+                        (username, accuracy, wpm, time_taken, total, max_wpm, min_wpm) 
+                        VALUES (?, ? ,?, ?, ?, ?, ?);''',
                         (statistic.username,
                         statistic.accuracy,
                         statistic.wpm,
                         statistic.time_taken,
-                        statistic.total,)
+                        statistic.total,
+                        statistic.max_wpm,
+                        statistic.min_wpm,)
                         )
         else:
             cursor.execute('''UPDATE statistics
-                        SET accuracy = ?, wpm = ?, time_taken = ?, total = ?
+                        SET accuracy = ?, wpm = ?, time_taken = ?, total = ?, max_wpm = ?, min_wpm = ?
                         WHERE username = ?;''',
                         (statistic.accuracy,
                         statistic.wpm,
                         statistic.time_taken,
                         statistic.total,
+                        statistic.max_wpm,
+                        statistic.min_wpm,
                         statistic.username,)
                         )
 

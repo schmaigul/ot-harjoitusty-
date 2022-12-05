@@ -1,8 +1,17 @@
+import re
+
 from essential_generators import DocumentGenerator
 
 class SentenceService:
     def __init__(self):
         self._generator = DocumentGenerator()
+
+    def text_cleaner(self, text):
+        text = re.sub(r'--', ' ', text)
+        text = re.sub(r'[\[].*?[\]]', '', text)
+        text = re.sub(r'(\b|\s+\-?|^\-?)(\d+|\d*\.\d+)\b','', text)
+        text = ' '.join(text.split())
+        return text
 
     def generate_sentence(self):
 
@@ -11,6 +20,7 @@ class SentenceService:
         while len(sentence.split()) < 10:
             sentence += " "
             sentence += self._generator.sentence()
+            sentence = self.text_cleaner(sentence)
 
         return sentence
 

@@ -1,4 +1,4 @@
-from services.user_service import user_service, UserExistError
+from services.user_service import user_service, UserExistError, EmptyPasswordError
 
 from tkinter import ttk, constants, StringVar
 
@@ -84,5 +84,8 @@ class CreateUserView:
             self._handle_login_view()
         except UserExistError:
             self._error_variable.set("User already exists")
+            self._error_label.grid(row = 0, column = 1, columnspan = 2, padx=5, pady=1)
+        except EmptyPasswordError:
+            self._error_variable.set("Password cannot be empty")
             self._error_label.grid(row = 0, column = 1, columnspan = 2, padx=5, pady=1)
     

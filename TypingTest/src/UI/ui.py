@@ -3,6 +3,7 @@ from ui.typing_test_finish_view import TypingTestFinishView
 from ui.login_view import LoginView
 from ui.menu_view import MenuView
 from ui.create_user_view import CreateUserView
+from ui.user_statistics_view import UserStatisticsView
 
 class ui:
     def __init__(self, root):
@@ -48,9 +49,13 @@ class ui:
     def _show_menu_view(self):
         self._hide_current_view()
 
-        self._current_view = MenuView(self._root, self._show_login_view, self._show_typing_test_view)
+        self._current_view = MenuView(self._root, self._show_login_view, self._show_typing_test_view, self._show_user_statistics_view)
 
         self._current_view.pack()
 
-    def _show_personal_statistics_view(self):
-        pass
+    def _show_user_statistics_view(self):
+        self._hide_current_view()
+
+        self._current_view = UserStatisticsView(self._root, self._show_menu_view)
+
+        self._current_view.pack()

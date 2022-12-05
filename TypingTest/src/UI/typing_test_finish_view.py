@@ -21,7 +21,10 @@ class TypingTestFinishView:
 
     def _initialize(self):
 
+        self._root.geometry("280x250")
         self._frame = ttk.Frame(master = self._root)
+        self._frame.grid_rowconfigure(0, weight=1)
+        self._frame.grid_columnconfigure(0, weight=1)
 
         self._initialize_header()
         self._initialize_statistics()
@@ -36,7 +39,7 @@ class TypingTestFinishView:
             font = ('consolas', 12, "bold")
         )
 
-        title.grid(column = 1, row = 0, columnspan = 1, padx = 5, pady = 5, sticky = (constants.E, constants.W))
+        title.grid(column = 0, row = 0, padx = 5, pady = 5)
 
 
     def _initialize_statistics(self):
@@ -47,9 +50,9 @@ class TypingTestFinishView:
         wpm = ttk.Label(master = self._frame, text = stat.wpm_string(), font=('consolas', 12))
         time_taken = ttk.Label(master =self._frame, text = stat.time_taken_string(), font=('consolas', 12))
 
-        accuracy.grid(column=1, columnspan=1, row = 3, padx = 5, pady = 5, sticky = (constants.E, constants.W))
-        wpm.grid(column=1, columnspan=1,  row = 1, padx = 5, pady = 5, sticky = (constants.E, constants.W))
-        time_taken.grid(column=1, columnspan=1, row = 2, padx = 5, pady = 5, sticky = (constants.E, constants.W))
+        wpm.grid(column=0, row = 1, padx = 5, pady = 5)
+        time_taken.grid(column=0, row = 2, padx = 5, pady = 5)
+        accuracy.grid(column=0, row = 3, padx = 5, pady = 5)
 
 
     def _initialize_new_typing_test_button(self):
@@ -60,7 +63,7 @@ class TypingTestFinishView:
             command = self._handle_new_typing_test_view
         )
 
-        typing_test_button.grid(column = 1, columnspan = 2, row = 4, padx = 5, pady = 5)
+        typing_test_button.grid(column = 0, row = 4, padx = 5, pady = 5)
 
     def _initialize_main_menu_button(self):
         
@@ -70,7 +73,4 @@ class TypingTestFinishView:
             command = self._handle_main_menu_view
         )
 
-        main_menu_button.grid(column = 1, columnspan = 2, row = 5, padx = 5, pady = 5)
-
-    def save_user_statistics(self):
-        pass
+        main_menu_button.grid(column = 0, row = 5, padx = 5, pady = 5)

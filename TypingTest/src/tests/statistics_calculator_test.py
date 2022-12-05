@@ -19,3 +19,14 @@ class TestStatistics(unittest.TestCase):
     def test_correct_wpm(self):
         input = "hehe hehe hehe"
         self.assertEqual(59, int(self.statistic_calc.calculate_words_per_minute(input)))
+
+    def test_calculate_statistics(self):
+
+        self.statistic_calc.calculate_statistics(
+            "I do not know how to write a sentence properly",
+            "I do not know how to write")
+
+        self.assertEqual(100, self.statistic_calc.get_accuracy())
+
+        
+        

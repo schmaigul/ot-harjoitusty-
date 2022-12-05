@@ -40,7 +40,9 @@ def create_statistics_tables(connection):
             accuracy int,
             wpm int,
             time_taken int,
-            total int
+            total int,
+            max_wpm int,
+            min_wpm int
         );
     ''')
 

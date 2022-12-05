@@ -33,6 +33,7 @@ class StatisticService:
 
         new_statistic = self.calculate_total_statistic(old_statistics)
         self.statistic_repository.update_user_statistics(new_statistic)
+
         return new_statistic
 
     def delete_all_statistics(self):
@@ -40,31 +41,39 @@ class StatisticService:
 
     def calculate_total_statistic(self, old_statistics):
 
-        old_length = old_statistics.total
+        old_total = old_statistics.total
 
-        new_accuracy = self.calculate_new_average(old_length,
+        new_total = old_statistics.total + self.round_statistic.total
+
+        new_accuracy = self.calculate_new_average(old_total,
+                                                new_total,
                                                 old_statistics.accuracy,
                                                 self.round_statistic.accuracy)
 
-        new_wpm = self.calculate_new_average(old_length,
+        new_wpm = self.calculate_new_average(old_total,
+                                            new_total,
                                             old_statistics.wpm,
                                             self.round_statistic.wpm)
 
-        new_time_taken = self.calculate_new_average(old_length,
+        new_time_taken = self.calculate_new_average(old_total,
+                                            new_total,
                                             old_statistics.time_taken,
                                             self.round_statistic.time_taken)
 
-        new_total = old_length+1
+        new_max_wpm = max(old_statistics.max_wpm, self.round_statistic.wpm)
+
+        new_slowest_wpm = min(old_statistics.min_wpm, self.round_statistic.wpm)
 
         return Statistic(self.round_statistic.username,
                         new_accuracy,
                         new_wpm,
                         new_time_taken,
-                        new_total)
+                        new_total,
+                        new_max_wpm,
+                        new_slowest_wpm)
 
-    def calculate_new_average(self, length, old_stat, new_stat):
-        new_length = old_stat+1
-        return (length*old_stat+new_stat)/new_length
+    def calculate_new_average(self, old_total, new_total, old_stat, new_stat):
 
+        return (old_total*old_stat+new_stat)/new_total
 
 statistic_service = StatisticService()

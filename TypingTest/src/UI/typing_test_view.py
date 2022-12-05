@@ -124,9 +124,11 @@ class TypingTestView:
         accuracy = self._statistic_calculator.accuracy
         wpm = self._statistic_calculator.wpm
         time_taken = self._statistic_calculator.time_taken
+        
         #make a final statistic, set user as none as it is not needed now
-        round_statistic = Statistic(username = user_service.get_current_user(), accuracy = accuracy, wpm = wpm, time_taken = time_taken, total = 1)
+        round_statistic = Statistic(username = user_service.get_current_user().username, accuracy = accuracy, wpm = wpm, time_taken = time_taken, total = 1, max_wpm = wpm, min_wpm = wpm)
         statistic_service.set_round_statistic(round_statistic)
+        statistic_service.update_user_total_statistics()
 
         self._frame.after(1000, self._handle_show_typing_test_finish_view)
 

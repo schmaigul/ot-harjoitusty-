@@ -1,11 +1,17 @@
 
 class Statistic:
-    def __init__(self, username = None, accuracy = 0, wpm = 0, time_taken = 0, total = 0):
+    def __init__(self, username = None,
+                accuracy = 0, wpm = 0,
+                time_taken = 0, total = 0,
+                max_wpm = 0, min_wpm = 0):
+
         self.username = username
         self.accuracy = accuracy
         self.wpm = wpm
         self.time_taken = time_taken
         self.total = total
+        self.max_wpm = max_wpm
+        self.min_wpm = min_wpm
 
     def get_time_taken(self):
         return self.time_taken
@@ -23,9 +29,16 @@ class Statistic:
         return f'Time taken: {self.time_taken:.2f}s'
 
     def wpm_string(self):
-        # pylint: disable=unused-argument
         return f'WPM: {self.wpm:.2f}'
 
     def accuracy_string(self):
-        # pylint: disable=unused-argument
         return f'Accuracy: {int(self.accuracy)}%'
+
+    def total_string(self):
+        return f'Total games played: {self.total}'
+
+    def max_wpm_string(self):
+        return f'Fastest wpm: {self.max_wpm:.2f}'
+
+    def min_wpm_string(self):
+        return f'Slowest wpm: {self.min_wpm:.2f}'
