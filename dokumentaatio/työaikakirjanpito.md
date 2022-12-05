@@ -6,3 +6,5 @@
 | 16.11. | 12    | projektin ensimmäinen iteraatio, typingtest toimii, statistiikkojen laskeminen, arkkitehtuuri  |
 | 21.11 | 10 | koodin refaktorointi, testaaminen, sovelluslogiikan eriyttäminen, kirjautumisikkuna, päävalikko, yhteenveto harjoituksen jälkeen |
 | 29.11 | 10 | tietokannat käyttäjille ja statistiikoille, tiedon tallennus, varoitukset, paljon testejä |
+| 30.11 | 2 | koodin korjausta linuxia varten |
+| yht | 38 | |
