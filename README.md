@@ -16,7 +16,7 @@ Sovelluksella voit testata kuinka nopea olet kirjoittamaan tietokoneen näppäim
 
 ## Asennus
 
-1. Asenna riippuvuudet komennolla:
+1. Asenna riippuvuudet TypingTest-kansiossa komennolla:
 
 ``poetry install``
 
