@@ -45,3 +45,18 @@
 - Testit kirjautumiselle ja tietokannan käsittelemiselle
 
 - Lisää testejä kaikkille luokille
+
+- git release
+
+## Viikko 6
+
+- Statistiikkojen tietokanta toimii
+
+- Sovellus tallentaa käyttäjän kokonaistilastot jokaisen harjoituksen jälkeen
+
+- Käyttäjä voi katsella kokonaistilastoja 
+
+- Testit lähes kaikelle
+
+- Käyttöliittymän parantamista linuxille
+
