@@ -2,7 +2,7 @@
 
 # TypingTest
 
-Sovelluksella voit testata kuinka nopea olet kirjoittamaan tietokoneen näppäimistöllä, antaen reaaliajassa tilastoja etenemisestäsi.
+Sovelluksella voit testata kuinka nopea olet kirjoittamaan tietokoneen näppäimistöllä, antaen tilastoja reaaliajassa. Sovellus myös tarjoaa yleisen kuvan tilastoista, jolla käyttäjä voi verrata edistymistään.
 
 ## Dokumentaatio
 
