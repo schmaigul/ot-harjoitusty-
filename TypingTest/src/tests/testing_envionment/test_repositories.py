@@ -1,0 +1,9 @@
+from tests.testing_envionment.test_database_connection import get_statistics_database_connection
+from repositories.statistics_repository import StatisticsRepository
+
+test_statistics_repository = StatisticsRepository(get_statistics_database_connection())
+
+from tests.testing_envionment.test_database_connection import get_user_database_connection
+from repositories.user_repository import UserRepository
+
+test_user_repository = UserRepository(get_user_database_connection())

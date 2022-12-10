@@ -60,3 +60,4 @@
 
 - Käyttöliittymän parantamista linuxille
 
+- Testit eivät vaikuta sovelluksen tietokantaan

@@ -17,12 +17,33 @@ class EmptyPasswordError(Exception):
     pass
 
 class UserService:
+    '''Class responsible for handling user-related operations
+    '''
+
     def __init__(self, user_repository = default_user_repository):
+        '''Constructor for the class
+
+        Args:
+            user_repository: UserRepository-object to handle the database operations
+        '''
 
         self.user_repository = user_repository
         self.user = None
 
     def login(self, username, password):
+        '''Logs in the user based on username and password if the credentials are correct
+
+        Args:
+            username: String, user inputted username
+            password: String, user inputted password
+
+        Returns:
+            User-object corresponding to the logged in user
+
+        Raises:
+            UserNotFoundError
+            IncorrectPasswordError
+        '''
 
         user = self.user_repository.find_user(username)
 
@@ -39,6 +60,19 @@ class UserService:
         self.user = None
 
     def create_user(self, username, password):
+        '''Creates a new user to the database if the credentials are legal
+
+        Args:
+            username: String, user inputted username
+            password: String, user inputted password
+
+        Returns:
+            User-object of the newly created user
+
+        Raises:
+            UserExistsError
+            EmptyPasswordError
+        '''
 
         existing_user = self.user_repository.find_user(username)
 
@@ -60,4 +94,6 @@ class UserService:
     def delete_all_users(self):
         self.user_repository.delete_all_users()
 
+#This variable will be used by the application and services to avoid making multiple
+#instances of UserService
 user_service = UserService()

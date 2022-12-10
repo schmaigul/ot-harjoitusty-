@@ -8,4 +8,5 @@
 | 29.11 | 10 | tietokannat käyttäjille ja statistiikoille, tiedon tallennus, varoitukset, paljon testejä |
 | 30.11 | 2 | koodin korjausta linuxia varten |
 | 5.12 | 10 | tilastojen näkymä, testejä, käyttöliittymän parantelemista, paremmat lauseet typing testissä |
-| yht | 48 | |
+| 10.12 | 3 | testaukseen oma tietokanta |
+| yht | 51 | |

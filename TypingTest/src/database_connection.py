@@ -11,7 +11,7 @@ def get_user_database_connection():
     return connection
 
 def get_statistics_database_connection():
-    
+
     connection = sqlite3.connect(STATISTICS_DATABASE_PATH)
     connection.row_factory = sqlite3.Row
 

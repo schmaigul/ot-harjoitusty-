@@ -1,5 +1,16 @@
-
 class Statistic:
+    '''Class that represents users typing test statistics.
+
+    Attributes:
+        username: String,
+        accuracy: Float, accuracy of a the tests
+        wpm: Float, words per minute
+        time_taken: Float, total time taken for the tests
+        total: Integer, users total number of typing tests
+        max_wpm: Float, maximum words per minute
+        min_wpm: Float, minumum words per minute
+    '''
+
     def __init__(self, username = None,
                 accuracy = 0, wpm = 0,
                 time_taken = 0, total = 0,

@@ -8,9 +8,10 @@ from services.user_service import user_service
 
 class TypingTestView:
 
-    def __init__(self, root, handle_typing_test_finish_view):
+    def __init__(self, root, handle_typing_test_finish_view, handle_main_menu_view):
         self._root = root
         self._handle_show_typing_test_finish_view = handle_typing_test_finish_view
+        self._handle_back_to_menu_view = handle_main_menu_view
 
         self._sentence_service = None
         self._statistic_calculator = None 
@@ -43,6 +44,7 @@ class TypingTestView:
         self._statistic_calculator = StatisticCalculator()
 
         self._initialize_title()
+        self._initialize_back_to_main_menu()
         self._initialize_test_sentence()
         self._initialize_typing_form()
         self._initialize_statistics()
@@ -54,7 +56,6 @@ class TypingTestView:
             text = "Write the following text:", font=('consolas', 12, "bold"))
 
         title.grid(column=1, row=0, columnspan=1, padx = 5, pady = 5)
-
 
     def _initialize_test_sentence(self):
         
@@ -77,6 +78,16 @@ class TypingTestView:
         typingform.bind("<KeyRelease>", self.evaluate_input)
 
         typingform.focus()
+
+    def _initialize_back_to_main_menu(self):
+
+        main_menu_button = ttk.Button(
+            master = self._frame,
+            text = "Back to Main Menu",
+            command = self._handle_back_to_menu_view
+        )
+
+        main_menu_button.grid(column = 1, row = 3, padx = 5, pady = 5)
 
     def _initialize_statistics(self):
 

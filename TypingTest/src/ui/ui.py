@@ -21,8 +21,8 @@ class ui:
     def _show_typing_test_view(self):
         self._hide_current_view()
 
-        self._current_view = TypingTestView(self._root, self._show_typing_test_finish_view)
-        
+        self._current_view = TypingTestView(self._root, self._show_typing_test_finish_view, self._show_menu_view)
+
         self._current_view.pack()
 
     def _show_typing_test_finish_view(self):

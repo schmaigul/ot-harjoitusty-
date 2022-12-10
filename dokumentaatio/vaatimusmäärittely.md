@@ -16,7 +16,7 @@ Sovellus aukeaa kirjautumisnäkymään, josta käyttäjä voi luoda uuden käytt
 
 ## Perusversion tarjoama toiminnallisuus
 
-### Ennen kirjautumista
+### Ennen kirjautumista (tehty)
 
 - Käyttäjä voi luoda järjestelmään käyttäjätunnuksen
     -   Käyttäjätunnuksen täytyy olla uniikki
@@ -24,7 +24,7 @@ Sovellus aukeaa kirjautumisnäkymään, josta käyttäjä voi luoda uuden käytt
     - Kirjautuminen toimii käyttäjän syöttäen aikaisemmin luodun käyttäjätunnuksen ja siihen vastaavan salasanan
     - Järjestelmä ilmoittaa, jos käyttäjätunnusta ei löydetä, tai salasana ei ole oikein
 
-### Kirjautumisen jälkeen
+### Kirjautumisen jälkeen (tehty)
 
 - Sovellus tervehtii käyttäjää, ja antaa käyttäjän valita kolme eri toiminnallisuutta
     - Aloita uusi kirjoitusharjoitus
@@ -38,7 +38,7 @@ Sovellus aukeaa kirjautumisnäkymään, josta käyttäjä voi luoda uuden käytt
         - ...
     - Kirjaudu ulos
 
-### Kirjoitusharjoitus
+### Kirjoitusharjoitus (tehty)
 
 - Sovellus antaa tekstinäytteen, joka hänen pitää kirjoittaa tekstilomakkeelle
 
@@ -46,11 +46,11 @@ Sovellus aukeaa kirjautumisnäkymään, josta käyttäjä voi luoda uuden käytt
 
 - Sovellus pitää yllä kirjoitettujen sanojen määrää, ja harjoitus päättyy kun kirjoitettu teksti sisältää yhtä monta sanaa kuin esimerkkiteksti.
 
-### Kirjoitusharjoituksen päättyminen
+### Kirjoitusharjoituksen päättyminen (tehty)
 
 - Sovellus näyttää lopputilastot kyseisestä harjoituksesta
 
-- Käyttäjä voi valita palaavansa päävalikkoon, tai aloittaa sama harjoitus uusiksi
+- Käyttäjä voi valita palaavansa päävalikkoon, tai aloittaa eri harjoitus uusiksi
 
 ## Jatkokehitysideoita
 

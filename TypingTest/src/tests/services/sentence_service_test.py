@@ -1,5 +1,4 @@
 import unittest
-
 from services.sentence_service import SentenceService
 
 class TestSentence(unittest.TestCase):
