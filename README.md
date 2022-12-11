@@ -6,6 +6,8 @@ Sovelluksella voit testata kuinka nopea olet kirjoittamaan tietokoneen näppäim
 
 ## Dokumentaatio
 
+[Käyttöohje](/dokumentaatio/k%C3%A4ytt%C3%B6ohje.md)
+
 [Vaatimuusmäärittely](/dokumentaatio/vaatimusm%C3%A4%C3%A4rittely.md)
 
 [Työaikakirjanpito](/dokumentaatio/ty%C3%B6aikakirjanpito.md)

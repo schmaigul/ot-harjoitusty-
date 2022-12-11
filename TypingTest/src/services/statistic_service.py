@@ -22,6 +22,7 @@ class StatisticService:
             user_service: UserService-object that handles user-related
                 operations
         '''
+
         self.round_statistic = None
         self.statistic_repository = statistic_repository
         self.user_service = user_service
@@ -59,7 +60,6 @@ class StatisticService:
 
         new_statistic = self.calculate_new_statistic(old_statistics)
         self.statistic_repository.update_user_statistics(new_statistic)
-
         return new_statistic
 
     def delete_all_statistics(self):

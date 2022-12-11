@@ -61,7 +61,7 @@ Sovelluksen osien suhdetta kuvaava luokka/pakkauskaavio:
 
 ### SentenceService
 
-Kirjoitusharjoitusten generoimisesta vastaa `SentenceService`-luokka. Tämä luokka käyttää kirjastoa `essential-generators`, jonka avulla voidaan ladata internetistä satunnaisia tekstipätkiä. `SentenceService` sisältää metodin myös tekstin siivoamiseen, joka on toteutettu säännöllisillä lausekkeilla (regex). Lauseet ovat vähintään 10-sanan pituisia, ja ovat luonteeltaan erittäin satunnaisia. `SentenceService` tarjoaa toiminnallisuuden kahden lauseen vertailuun, [evaluate()](TypingTest/src/services/sentence_service.py).Tämä metodi palauttaa värin indikoiden, vastaako käyttäjän siihen mennessä kirjoitettu syöte mallitekstin etuliitettä.
+Kirjoitusharjoitusten generoimisesta vastaa `SentenceService`-luokka. Tämä luokka käyttää kirjastoa `essential-generators`, jonka avulla voidaan ladata internetistä satunnaisia tekstipätkiä. `SentenceService` sisältää metodin myös tekstin siivoamiseen, joka on toteutettu säännöllisillä lausekkeilla (regex). Lauseet ovat vähintään 10-sanan pituisia, ja ovat luonteeltaan erittäin satunnaisia. `SentenceService` tarjoaa toiminnallisuuden kahden lauseen vertailuun, [evaluate()](../TypingTest/src/services/sentence_service.py).Tämä metodi palauttaa värin indikoiden, vastaako käyttäjän siihen mennessä kirjoitettu syöte mallitekstin etuliitettä.
 
 ### StatisticsCalculator
 

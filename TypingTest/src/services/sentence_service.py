@@ -25,7 +25,7 @@ class SentenceService:
         text = re.sub(r'--', ' ', text)
         text = re.sub(r'[\[].*?[\]]', '', text)
         text = re.sub(r'(\b|\s+\-?|^\-?)(\d+|\d*\.\d+)\b','', text)
-        text.replace('\n', '')
+        text = text.replace('\n', ' ').replace('\r', ' ')
         text = ' '.join(text.split())
         return text
 

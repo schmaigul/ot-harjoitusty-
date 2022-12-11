@@ -26,18 +26,6 @@ class TestStatisticRepository(unittest.TestCase):
 
         self.assertEqual(2, len(stats))
 
-    def test_set_new_user_statistic(self):
-
-        new_stats = test_statistics_repository.update_user_statistics_old(self.statistic)
-        self.assertEqual(self.statistic.wpm, new_stats.wpm)
-
-    def test_update_statistic_old(self):
-
-        test_statistics_repository.update_user_statistics_old(self.statistic)
-        new_stats = test_statistics_repository.update_user_statistics_old(self.statistic2)
-
-        self.assertEqual(self.statistic2.total, new_stats.total)
-
     def test_insert_statistic(self):
         test_statistics_repository.insert_user_statistics(self.statistic)
         stats = test_statistics_repository.find_user_statistics(self.statistic.username)

@@ -110,10 +110,11 @@ class TypingTestView:
         completed, color = self._sentence_service.evaluate(sentence_label, usr_input)
         self._sentence_form.config(foreground = color)
 
-        self.update_statistics()
+        if not completed:
+            self.update_statistics()
 
         if completed:
-            self.save_and_complete()
+            self._save_and_complete()
     
     def update_statistics(self):
         
@@ -129,19 +130,21 @@ class TypingTestView:
         self._wpm.config(text = self._statistic_calculator.wpm_string())
         self._time_taken.config(text = self._statistic_calculator.time_taken_string())
 
-    def save_and_complete(self):
-        
+    def _save_and_complete(self):
+
         #Retrieve current statistics to local variables
         accuracy = self._statistic_calculator.accuracy
         wpm = self._statistic_calculator.wpm
         time_taken = self._statistic_calculator.time_taken
-        
-        #make a final statistic, set user as none as it is not needed now
+
+        #make a final statistic
         round_statistic = Statistic(username = user_service.get_current_user().username, accuracy = accuracy, wpm = wpm, time_taken = time_taken, total = 1, max_wpm = wpm, min_wpm = wpm)
         statistic_service.set_round_statistic(round_statistic)
+
+        self._frame.after(1000, self._update_and_change_view)
+
+    def _update_and_change_view(self):
+
         statistic_service.update_user_total_statistics()
-
-        self._frame.after(1000, self._handle_show_typing_test_finish_view)
-
-
+        self._handle_show_typing_test_finish_view()
 
