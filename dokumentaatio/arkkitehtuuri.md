@@ -90,7 +90,7 @@ sequenceDiagram
   participant UserRepository
   participant schmaigul
   User->>ui: click "Create user" button
-  ui->>TodoService: create_user("schmaigul", "password")
+  ui->>UserService: create_user("schmaigul", "password")
   UserService->>UserRepository: find_by_username("schmaigul")
   UserRepository-->>UserService: None
   UserService->>schmaigul: User("schmaigul", "password")
