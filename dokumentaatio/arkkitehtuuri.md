@@ -141,3 +141,22 @@ Tapahtumakäsittelijä kutsuu `SentenceService`:n luomaan uuden harjoituslauseen
 
 ## Tilastojen katseleminen
 
+Demonstroidaan seuraavaksi kuinka sovellus hakee käyttäjän persoonalliset kokonaistilastot. Painettuaan päävalikossa "Statistics"-tapahtuu seuraavasti:
+
+```mermaid
+sequenceDiagram
+    actor User
+    participant UI
+    participant StatisticService
+    participant UserService
+    User->>UI: click "statistics"-button
+    UI->>UI: UserStatisticsView()
+    UI->>StatisticsService: get_current_user_statistic()
+    StatisticService->>UserService: get_current_user()
+    UserService-->StatisticService: user
+    StatisticService->>StatisticRepository: find_user_statistics(user)
+    StatisticRepository-->>StatisticService: Statistic
+    StatisticService-->>UI: Statistic
+```
+
+
