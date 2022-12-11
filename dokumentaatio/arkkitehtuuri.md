@@ -89,13 +89,13 @@ sequenceDiagram
   participant UserService
   participant UserRepository
   participant schmaigul
-  User->>UI: click "Create user" button
-  UI->>TodoService: create_user("schmaigul", "password")
+  User->>ui: click "Create user" button
+  ui->>TodoService: create_user("schmaigul", "password")
   UserService->>UserRepository: find_by_username("schmaigul")
   UserRepository-->>UserService: None
   UserService->>schmaigul: User("schmaigul", "password")
   UserService->>UserRepository: create_user(schmaigul)
-  UI->>UI: show_login_view()
+  ui->>ui: show_login_view()
 ```
 
 Tapahtumakäsittelijä kutsuu sovelluslogiikan metodia `create_user` antaen parametriksi luotavan käyttäjänimen ja salasanan. Sovelluslogiikka selvittää `UserRepository`:n avulla onko käyttäjätunnus olemassa. Jos ei, luo sovelluslogiikka `User`-olion ja tellentaa sen kutsumalla `UserRepository`-luokan metodia `create_user`. Uuden käyttäjän luotua käyttöliittymä vaihtaa ikkunaksi `LoginView`:n, jossa käyttäjä voi kirjoittaa aikaisemmat tietonsa ja kirjautua sisään.
