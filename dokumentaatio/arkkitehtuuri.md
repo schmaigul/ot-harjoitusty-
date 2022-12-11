@@ -82,6 +82,7 @@ Kuvataan seuraavaksi sovelluksen toimintalogiikkaa muutaman päätoiminnallisuud
 
 Käyttäjä voi luoda uuden käyttäjätunnuksen kirjoittamalla käyttäjänimen ja salasanan. Käyttäjänimen pitää olla uniikki. Käyttäjän klikatessa "Create User" etenee sovelluksen kontrolli seuraavasti:
 
+```mermaid
 sequenceDiagram
   actor User
   participant ui
@@ -95,6 +96,7 @@ sequenceDiagram
   UserService->>schmaigul: User("schmaigul", "password")
   UserService->>UserRepository: create_user(schmaigul)
   UI->>UI: show_login_view()
+```
 
 Tapahtumakäsittelijä kutsuu sovelluslogiikan metodia `create_user` antaen parametriksi luotavan käyttäjänimen ja salasanan. Sovelluslogiikka selvittää `UserRepository`:n avulla onko käyttäjätunnus olemassa. Jos ei, luo sovelluslogiikka `User`-olion ja tellentaa sen kutsumalla `UserRepository`-luokan metodia `create_user`. Uuden käyttäjän luotua käyttöliittymä vaihtaa ikkunaksi `LoginView`:n, jossa käyttäjä voi kirjoittaa aikaisemmat tietonsa ja kirjautua sisään.
 
