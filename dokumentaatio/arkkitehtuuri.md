@@ -59,6 +59,14 @@ Sovelluksen osien suhdetta kuvaava luokka/pakkauskaavio:
 
 ![sovelluslogiikka](/dokumentaatio/kuvat/sovelluslogiikka.png)
 
+### SentenceService
+
+Kirjoitusharjoitusten generoimisesta vastaa `SentenceService`-luokka. Tämä luokka käyttää kirjastoa `essential-generators`, jonka avulla voidaan ladata internetistä satunnaisia tekstipätkiä. `SentenceService` sisältää metodin myös tekstin siivoamiseen, joka on toteutettu säännöllisillä lausekkeilla (regex). Lauseet ovat vähintään 10-sanan pituisia, ja ovat luonteeltaan erittäin satunnaisia. `SentenceService` tarjoaa toiminnallisuuden kahden lauseen vertailuun, [evaluate()](TypingTest/src/services/sentence_service.py).Tämä metodi palauttaa värin indikoiden, vastaako käyttäjän siihen mennessä kirjoitettu syöte mallitekstin etuliitettä.
+
+### StatisticsCalculator
+
+`StatisticsCalculator`-luokka vastaa kirjoitusharjoitusten laskemisesta reaaliajassa. Luokka pystyy laskemaan kirjoittajan tarkkuuden, sanoja minuutissa (wpm), ja aikaa kulutettu harjoituksessa. Luokkaa käytetään `SentenceService`:n tavoin ainoastaan kirjoitusharjoitusta tehdessä, eikä se ole yhteydessä pysyväistalletukseen.
+
 ## Tietojen pysyväistallennus
 
 Pakkauksen repositories luokat `UserRepository` ja `StatisticRepository` huolehtivat tietojen pysyväistalennuksesta. Kummatkin luokat tallentaa tietoja SQLite-tietokantaan 
@@ -141,7 +149,7 @@ Tapahtumakäsittelijä kutsuu `SentenceService`:n luomaan uuden harjoituslauseen
 
 ## Tilastojen katseleminen
 
-Demonstroidaan seuraavaksi kuinka sovellus hakee käyttäjän persoonalliset kokonaistilastot. Painettuaan päävalikossa "Statistics"-tapahtuu seuraavasti:
+Demonstroidaan seuraavaksi kuinka sovellus hakee käyttäjän persoonalliset kokonaistilastot. Painettuaan päävalikossa "statistics"-tapahtuu seuraavasti:
 
 ```mermaid
 sequenceDiagram
@@ -159,4 +167,10 @@ sequenceDiagram
     StatisticService-->>UI: Statistic
 ```
 
+Tapahtumakäsittelijä kutsuu `StatisticService`-luokkaa hakemaan kirjautuneen käyttäjän tilastoja metodilla `get_current_user_statistic()`. Tilastojen huolehtiminen on eriytetty käyttäjätietojen huolehtimisesta. Tästä syystä `StatisticService` kutsuu erikseen `UserService` hakemaan kirjautuneen käyttäjän. Itse `StatisticService` ei tiedä kuka on kirjautuneena sisään. `UserService` hakee kirjautuneen käyttäjän käyttäjänimen, jonka avulla `StatisticService` kutsuu tietokannasta huolehtivee `StatisticRepository`-luokkaa, joka palauttaa käyttäjän kokonaistilastot.
 
+## Ohjelman rakenteeseen jääneet heikkoudet
+
+### Sovelluslogiikka
+
+Ohjelma joskus tallentaa käyttäjän harjoitustilastot kaksi kertaa yhden sijasta. Sain bugin ehkä korjattua hieman epämääräisellä tavalla. Lauseiden generoinnissa on vielä hiomista, joskus lauseessa on rivivaihto, joka on mahdotonta saada oikein.
