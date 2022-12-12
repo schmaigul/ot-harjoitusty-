@@ -9,4 +9,5 @@
 | 30.11 | 2 | koodin korjausta linuxia varten |
 | 5.12 | 10 | tilastojen näkymä, testejä, käyttöliittymän parantelemista, paremmat lauseet typing testissä |
 | 10.12 | 5 | testaukseen oma tietokanta, docstring |
-| yht | 56 | |
+| 12.12 | 6 | arkkitehtuuri, käyttöohje, bugien korjausta |
+| yht | 62 | |
