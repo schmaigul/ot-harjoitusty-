@@ -22,7 +22,7 @@ class UserStatisticsView:
 
     def _initialize(self):
 
-        self._root.geometry("280x300")
+        self._root.geometry("350x350")
         self._frame = ttk.Frame(master = self._root)
         self._frame.grid_rowconfigure(0, weight=1)
         self._frame.grid_columnconfigure(0, weight=1)
@@ -45,7 +45,7 @@ class UserStatisticsView:
 
         label = ttk.Label(
             master = self._frame,
-            text = "You haven't done any typing tests",
+            text = "No statistics yet",
             font = ("consolas", 14, "bold")
         )
         label.grid(row = 1, column = 0, pady = 10)

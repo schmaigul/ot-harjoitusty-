@@ -11,6 +11,12 @@ class TestSentence(unittest.TestCase):
 
         self.assertEqual(True, (length >= 10))
 
+    def test_clean_sentence(self):
+        sentence = f'word\nword\rword --'
+        clean_sentence = self.sentenceservice.text_cleaner(sentence)
+
+        self.assertEqual('word word word', clean_sentence)
+
     def test_sentence_evaluate_wrong(self):
         
         sentence = "I dont know how to"

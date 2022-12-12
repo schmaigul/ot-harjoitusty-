@@ -22,7 +22,7 @@ class MenuView:
 
     def _initialize(self):
 
-        self._root.geometry("250x140")
+        self._root.geometry("300x200")
         self._frame = ttk.Frame(master = self._root)
         self._frame.grid_rowconfigure(0, weight=1)
         self._frame.grid_columnconfigure(0, weight=1)

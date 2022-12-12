@@ -25,13 +25,14 @@ class CreateUserView:
 
     def _initialize(self):
 
-        self._root.geometry("270x120")
+        self._root.geometry("330x120")
         self._frame = ttk.Frame(master = self._root)
 
         self._initialize_error_label()
         self._initialize_username_and_password_label()
         self._initialize_username_and_password_form()
         self._initialize_create_account_button()
+        self._initialize_login_view_button()
 
     def _initialize_error_label(self):
 
@@ -73,6 +74,14 @@ class CreateUserView:
                                     command = self._handle_create_user)
 
         create_user_button.grid(column = 1, row = 3, padx = 5, pady = 5)
+
+    def _initialize_login_view_button(self):
+
+        login_button = ttk.Button(master = self._frame,
+                                text = "Back to login screen",
+                                command = self._handle_login_view)
+
+        login_button.grid(column = 0, row = 3, padx = 5, pady = 5)
 
     def _handle_create_user(self):
 

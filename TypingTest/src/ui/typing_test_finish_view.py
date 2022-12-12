@@ -21,7 +21,7 @@ class TypingTestFinishView:
 
     def _initialize(self):
 
-        self._root.geometry("280x250")
+        self._root.geometry("300x270")
         self._frame = ttk.Frame(master = self._root)
         self._frame.grid_rowconfigure(0, weight=1)
         self._frame.grid_columnconfigure(0, weight=1)
