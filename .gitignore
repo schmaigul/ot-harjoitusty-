@@ -9,3 +9,5 @@ testsrc/
 # data files
 TypingTest/data/users.sqlite
 TypingTest/data/statistics.sqlite
+TypingTest/data/test_users.sqlite
+TypingTest/data/test_statistics.sqlite
