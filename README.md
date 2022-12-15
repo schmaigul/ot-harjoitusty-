@@ -10,11 +10,13 @@ Sovelluksella voit testata kuinka nopea olet kirjoittamaan tietokoneen näppäim
 
 [Vaatimuusmäärittely](/dokumentaatio/vaatimusm%C3%A4%C3%A4rittely.md)
 
+[Arkkitehtuurikuvaus](/dokumentaatio/arkkitehtuuri.md)
+
+[Testausdokumentti](/dokumentaatio//testausdokumentti.md)
+
 [Työaikakirjanpito](/dokumentaatio/ty%C3%B6aikakirjanpito.md)
 
 [Changelog](/dokumentaatio/changelog.md)
-
-[Arkkitehtuurikuvaus](/dokumentaatio/arkkitehtuuri.md)
 
 ## Asennus
 
