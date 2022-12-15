@@ -171,10 +171,10 @@ Tapahtumakäsittelijä kutsuu `StatisticService`-luokkaa hakemaan kirjautuneen k
 
 ### Muut toiminnallisuudet
 
-Muut sovelluksen toiminnallisuudet noudattavat samoja repositorio- ja service-mallien periaatteita. Käyttöliittymä on eriytetty lähes kauttaaltaan sovelluslogiikasta. Esimerkiksi kirjautuminen toimii hyvin samalla tavoin kuin uuden käyttäjän luominen.
+Muut sovelluksen toiminnallisuudet noudattavat samoja repositorio- ja service-mallien periaatteita. Käyttöliittymä on eriytetty lähes kauttaaltaan sovelluslogiikasta. Esimerkiksi kirjautuminen toimii hyvin samalla tavalla kuin uuden käyttäjän luominen.
 
 ## Ohjelman rakenteeseen jääneet heikkoudet
 
 ### Sovelluslogiikka
 
-Ohjelma joskus tallentaa käyttäjän harjoitustilastot kaksi kertaa yhden sijasta. Lauseiden generoinnissa on vielä hiomista. Joskus vastaan saattaa tulla lause, jossa on sanoja, joita ei ole mahdollista kirjoittaa.
+Ohjelma joskus tallentaa käyttäjän harjoitustilastot kaksi kertaa yhden sijasta. Lauseiden generoinnissa on vielä hiomista. Joskus vastaan saattaa tulla lause, jossa on sanoja, joita ei ole mahdollista kirjoittaa. Cubbli-käyttöjärjestelmällä sovelluksen fontti ei ole sama kuin windows:lla, joten sovellus saattaa näyttää vähän erilaiselta kuin käyttöohjeessa.
