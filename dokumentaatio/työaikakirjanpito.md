@@ -10,4 +10,5 @@
 | 5.12 | 10 | tilastojen näkymä, testejä, käyttöliittymän parantelemista, paremmat lauseet typing testissä |
 | 10.12 | 5 | testaukseen oma tietokanta, docstring |
 | 12.12 | 6 | arkkitehtuuri, käyttöohje, bugien korjausta |
-| yht | 62 | |
+| 15.12 | 5 | parannuksia dokumentointiin, käyttöliittymän parantelua |
+| yht | 67 | |
