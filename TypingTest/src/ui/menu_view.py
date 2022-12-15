@@ -46,15 +46,17 @@ class MenuView:
 
         typing_test_button = ttk.Button(master = self._frame,
                                     text = "Start a typing test",
-                                    command = self._handle_new_typing_test_view)
+                                    command = self._handle_new_typing_test_view,
+                                    width = 200)
 
         typing_test_button.grid(column = 0, row = 1, padx = 5, pady = 5)
 
     def _initialize_statistics_button(self):
 
-        statistics_button = ttk.Button(master = self._frame, 
+        statistics_button = ttk.Button(master = self._frame,
                                     text = "Statistics",
-                                    command = self._handle_user_statistics_view)
+                                    command = self._handle_user_statistics_view,
+                                    width = 200)
 
         statistics_button.grid(column = 0, row = 2, padx = 5, pady = 5)
 
@@ -62,7 +64,8 @@ class MenuView:
 
         logout_button = ttk.Button(master = self._frame,
                                 text = "Logout",
-                                command = self._handle_logout)
+                                command = self._handle_logout,
+                                width = 200)
 
         logout_button.grid(column = 0, row = 3, padx = 5, pady = 5)
 

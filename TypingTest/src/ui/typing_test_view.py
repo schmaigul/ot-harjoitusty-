@@ -53,7 +53,9 @@ class TypingTestView:
 
         title = ttk.Label(
             master = self._frame,
-            text = "Write the following text:", font=('consolas', 12, "bold"))
+            text = "Write the following text:",
+            font=('consolas', 15, "bold")
+            )
 
         title.grid(column=1, row=0, columnspan=1, padx = 5, pady = 5)
 
@@ -61,14 +63,13 @@ class TypingTestView:
         
         test_sentence = self._sentence_service.generate_sentence()
 
-        label = ttk.Label(master = self._frame, text = test_sentence, font=('consolas', 13), wraplength=500)
+        label = ttk.Label(master = self._frame, text = test_sentence, font=('consolas', 13), wraplength=490)
 
         label.grid(column=1, row=1, columnspan=1, padx = 5, pady = 5, sticky = (constants.E, constants.W))
 
         self._sentence_label = label
 
     def _initialize_typing_form(self):
-        
 
         typingform = ttk.Entry(master = self._frame, font=('arial', 13))
         typingform.grid(column = 1, row = 2, columnspan=1, padx = 5, pady = 5, sticky=(constants.E, constants.W))
@@ -91,9 +92,9 @@ class TypingTestView:
 
     def _initialize_statistics(self):
 
-        self._accuracy = ttk.Label(master = self._frame, text = f'Accuracy: 100%', font =('consolas', 12))
-        self._wpm = ttk.Label(master = self._frame, text = f'WPM: 0', font=('consolas', 12))
-        self._time_taken = ttk.Label(master =self._frame, text = f'Time taken: 0s', font=('consolas', 12))
+        self._accuracy = ttk.Label(master = self._frame, text = f'Accuracy: 100%', font =('consolas', 13))
+        self._wpm = ttk.Label(master = self._frame, text = f'WPM: 0', font=('consolas', 13))
+        self._time_taken = ttk.Label(master =self._frame, text = f'Time taken: 0s', font=('consolas', 13))
 
         self._accuracy.grid(column=1, columnspan=1, padx = 5, pady = 5)
         self._wpm.grid(column=1, columnspan=1, padx = 5, pady = 5)

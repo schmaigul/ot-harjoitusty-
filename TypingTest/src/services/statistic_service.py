@@ -21,6 +21,13 @@ class StatisticService:
                 handles database operations
             user_service: UserService-object that handles user-related
                 operations
+
+        Attributes:
+            round_statistic: statistic from previous typing test
+            statistic_repository: StatisticsRepository-object that
+                handles database operations
+            user_service: UserService-object that handles user-related
+                operations
         '''
 
         self.round_statistic = None
@@ -60,14 +67,16 @@ class StatisticService:
 
         new_statistic = self.calculate_new_statistic(old_statistics)
         self.statistic_repository.update_user_statistics(new_statistic)
+
         return new_statistic
 
     def delete_all_statistics(self):
         self.statistic_repository.delete_all_statistics()
 
     def calculate_new_statistic(self, old_statistics):
-        '''Calculates current users statistics based on a previous Statistic-object.
-        Calls multiple new_average_function to find new statistics
+        '''Calculates current users statistics based on the users previous statistics
+        stored in the database.
+        Calls multiple times new_average_function() to calculate new statistics
 
         Args:
             old_statistics: Statistic-object, including users previous overall statistics
@@ -78,6 +87,7 @@ class StatisticService:
 
         old_total = old_statistics.total
 
+        #New total number of typing tests played
         new_total = old_statistics.total + self.round_statistic.total
 
         new_accuracy = self.calculate_new_average(old_total,
@@ -108,7 +118,7 @@ class StatisticService:
                         new_slowest_wpm)
 
     def calculate_new_average(self, old_total, new_total, old_stat, new_stat):
-        '''Calculates new average of the given values
+        '''Calculates new average from the given values
 
         Args:
             old_total: int, old total number of completed typing tests

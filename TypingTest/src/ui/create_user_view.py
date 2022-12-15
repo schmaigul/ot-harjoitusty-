@@ -25,10 +25,12 @@ class CreateUserView:
 
     def _initialize(self):
 
-        self._root.geometry("330x120")
+        self._root.geometry("330x130")
         self._frame = ttk.Frame(master = self._root)
+        self._frame.grid_columnconfigure(1, weight = 1, minsize = 200)
 
         self._initialize_error_label()
+        self._initialize_create_user_header()
         self._initialize_username_and_password_label()
         self._initialize_username_and_password_form()
         self._initialize_create_account_button()
@@ -42,9 +44,17 @@ class CreateUserView:
                                 textvariable = self._error_variable,
                                 font = ('consolas', 10, 'bold'),
                                 foreground = 'red')
-        
+
         self._error_label.grid(row = 0, column = 1, columnspan = 2, padx=5, pady=1)
 
+    def _initialize_create_user_header(self):
+
+        create_user_header = ttk.Label(master = self._frame,
+                                text = "Create a new user",
+                                font=('consolas', 10, "bold")
+                                )
+
+        create_user_header.grid(column = 0, row = 0, padx = 5, pady = 5, sticky = constants.W)
 
     def _initialize_username_and_password_label(self):
 
@@ -64,8 +74,8 @@ class CreateUserView:
         self._username_form = ttk.Entry(master = self._frame)
         self._password_form = ttk.Entry(master = self._frame, show = "*")
 
-        self._username_form.grid(column = 1, row = 1, padx = 5, pady = 5)
-        self._password_form.grid(column = 1, row = 2, padx = 5, pady = 5)
+        self._username_form.grid(column = 1, row = 1, padx = 5, pady = 5, sticky = (constants.E, constants.W))
+        self._password_form.grid(column = 1, row = 2, padx = 5, pady = 5, sticky = (constants.E, constants.W))
 
     def _initialize_create_account_button(self):
 
@@ -73,15 +83,15 @@ class CreateUserView:
                                     text = "Create user",
                                     command = self._handle_create_user)
 
-        create_user_button.grid(column = 1, row = 3, padx = 5, pady = 5)
+        create_user_button.grid(column = 1, row = 3, padx = 5, pady = 5, sticky = (constants.E, constants.W))
 
     def _initialize_login_view_button(self):
 
         login_button = ttk.Button(master = self._frame,
-                                text = "Back to login screen",
+                                text = "Back to login",
                                 command = self._handle_login_view)
 
-        login_button.grid(column = 0, row = 3, padx = 5, pady = 5)
+        login_button.grid(column = 0, row = 3, padx = 5, pady = 5, sticky = (constants.E, constants.W))
 
     def _handle_create_user(self):
 

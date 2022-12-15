@@ -74,6 +74,7 @@ class StatisticCalculator(Statistic):
         if len(usr_input.split()) == 0:
             return 0
 
+        #find the number of differing characters between the texts by using sets
         acc = len(set(usr_input.split()) & set(correct_so_far.split()))
 
         acc = acc/len(usr_input.split())

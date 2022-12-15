@@ -27,6 +27,10 @@ class SentenceService:
         text = re.sub(r'(\b|\s+\-?|^\-?)(\d+|\d*\.\d+)\b','', text)
         text = text.replace('\n', ' ').replace('\r', ' ')
         text = ' '.join(text.split())
+
+        #canonical normalization, decomposes unicode characters to ascii to make it writeable
+        text = unicodedata.normalize("NFD", text)
+
         return text
 
     def generate_sentence(self):
@@ -43,8 +47,7 @@ class SentenceService:
             sentence += self._generator.sentence()
             sentence = self.text_cleaner(sentence)
 
-        #canonical normalization, decomposes weird unicode-characters to make writeable
-        return unicodedata.normalize("NFD", sentence)
+        return sentence
 
     def evaluate(self, sentence_label, usr_input):
         '''Returns a color corresponding whether the user has written the sentence
