@@ -61,3 +61,13 @@
 - Käyttöliittymän parantamista linuxille
 
 - Testit eivät vaikuta sovelluksen tietokantaan
+
+## Viikko 7
+
+- Käyttöliittymän parannuksia
+
+- Käyttöohje
+
+- Testausdokumentti
+
+- Arkkitehtuurikuvaus

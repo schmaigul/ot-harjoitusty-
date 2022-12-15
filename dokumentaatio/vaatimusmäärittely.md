@@ -6,13 +6,13 @@ Sovelluksen avulla käyttäjä voi testata kirjoitusnopeuttaan, ja saada tilasto
 
 ## Käyttäjät
 
-Aluksi sovelluksella on vain yksi normaali käyttäjärooli. Myöhemmin sovellukselle olisi tarkoitus lisätä enemmän oikeuksia omaava käyttäjä, joka voi lisätä uusia harjoituksia.
+Sovelluksella on vain yksi käyttäjärooli, jolla on uniikki käyttäjänimi ja ei-tyhjä salasana. Jokaisella käyttäjällä on persoonalliset tilastot. Käyttäjät eivät ole vuorovaikutuksessa muiden käyttäjien kanssa.
 
 ## Käyttöliittymäluonnos
 
 ![Käyttöliittymäluonnos](./kuvat/k%C3%A4ytt%C3%B6liittym%C3%A4luonnos.jpg)
 
-Sovellus aukeaa kirjautumisnäkymään, josta käyttäjä voi luoda uuden käyttäjän tai kirjautua sisään aikaisemmin luotuun käyttäjään. Kirjautumisen jälkeen käyttäjä voi aloittaa kirjoittamisharjoituksen, tarkastella tilastojaan, tai kirjautua ulos. 
+Sovellus aukeaa kirjautumisnäkymään, josta käyttäjä voi luoda uuden käyttäjän tai kirjautua sisään aikaisemmin luotuun käyttäjään. Kirjautumisen jälkeen käyttäjä voi tehdä kirjoitusharjoituksia, tarkastella tilastojaan, tai kirjautua ulos. 
 
 ## Perusversion tarjoama toiminnallisuus
 
@@ -29,18 +29,17 @@ Sovellus aukeaa kirjautumisnäkymään, josta käyttäjä voi luoda uuden käytt
 - Sovellus tervehtii käyttäjää, ja antaa käyttäjän valita kolme eri toiminnallisuutta
     - Aloita uusi kirjoitusharjoitus
         - Tämä harjoitus on valittu satunnaisesti tietokannasta
-    - Tarkastele persoonallisia tilastoja
-        - Tests taken
+    - Tarkastele persoonallisia kokonaistilastoja
+        - Total Tests taken
         - Average accuracy
         - Average words per minute
         - Fastest words per minute
         - Slowest words per minute
-        - ...
     - Kirjaudu ulos
 
 ### Kirjoitusharjoitus (tehty)
 
-- Sovellus antaa tekstinäytteen, joka hänen pitää kirjoittaa tekstilomakkeelle
+- Sovellus antaa satunnaisen tekstinäytteen internetistä, joka hänen pitää kirjoittaa tekstilomakkeelle
 
 - Sovellus antaa real-time tilastoja kirjoituksen oikeudesta, kuten tarkkuus, words per minute etc.
 
@@ -50,7 +49,7 @@ Sovellus aukeaa kirjautumisnäkymään, josta käyttäjä voi luoda uuden käytt
 
 - Sovellus näyttää lopputilastot kyseisestä harjoituksesta
 
-- Käyttäjä voi valita palaavansa päävalikkoon, tai aloittaa eri harjoitus uusiksi
+- Käyttäjä voi valita palaavansa päävalikkoon, tai aloittaa uuden harjoituksen
 
 ## Jatkokehitysideoita
 
