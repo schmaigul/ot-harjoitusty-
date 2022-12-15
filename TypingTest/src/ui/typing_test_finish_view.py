@@ -36,7 +36,7 @@ class TypingTestFinishView:
         title = ttk.Label(
             master = self._frame,
             text = "Well done!",
-            font = ('consolas', 13, "bold")
+            font = ('consolas', 15, "bold")
         )
 
         title.grid(column = 0, row = 0, padx = 5, pady = 5)
