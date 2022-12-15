@@ -37,8 +37,6 @@ class TypingTestView:
         
         self._root.geometry("500x400")
         self._frame = ttk.Frame(master = self._root)
-        self._frame.option_add("*Label.Font", "consolas 30")
-        self._frame.option_add("*Button.Font", "consolas 30")
 
         self._sentence_service = SentenceService()
         self._statistic_calculator = StatisticCalculator()

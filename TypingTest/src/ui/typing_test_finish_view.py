@@ -36,7 +36,7 @@ class TypingTestFinishView:
         title = ttk.Label(
             master = self._frame,
             text = "Well done!",
-            font = ('consolas', 12, "bold")
+            font = ('consolas', 13, "bold")
         )
 
         title.grid(column = 0, row = 0, padx = 5, pady = 5)
@@ -46,9 +46,9 @@ class TypingTestFinishView:
 
         stat = statistic_service.get_round_statistic()
 
-        accuracy = ttk.Label(master = self._frame, text = stat.accuracy_string(), font =('consolas', 12))
-        wpm = ttk.Label(master = self._frame, text = stat.wpm_string(), font=('consolas', 12))
-        time_taken = ttk.Label(master =self._frame, text = stat.time_taken_string(), font=('consolas', 12))
+        accuracy = ttk.Label(master = self._frame, text = stat.accuracy_string(), font =('consolas', 13, "bold"))
+        wpm = ttk.Label(master = self._frame, text = stat.wpm_string(), font=('consolas', 13, "bold"))
+        time_taken = ttk.Label(master =self._frame, text = stat.time_taken_string(), font=('consolas', 13, "bold"))
 
         wpm.grid(column=0, row = 1, padx = 5, pady = 5)
         time_taken.grid(column=0, row = 2, padx = 5, pady = 5)
